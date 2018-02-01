@@ -14,9 +14,9 @@ using namespace std;
 int main ()
 {
   int total=1;
-  string num;
-  fstream file;
-  file.open("numbers.txt",ios::out|ios::in|ios::trunc);
+  string line;
+  ofstream out;
+  out.open("numbers.txt");
 
   while(total <= 20)
   {
@@ -29,10 +29,22 @@ int main ()
     {
       int divisible = 0;
       divisible +=number;
-      file << divisible << "\n";
+      out << divisible << "\n";
       total++;
     }
   }
-  file.close();
+  out.close();
+  ifstream in;
+  in.open("numbers.txt");
+
+  if (in.is_open())
+  {
+    cout << "\nThese are the first 20 set of numbers divisible by 3: \n";
+    while (getline (in,line) )
+    {
+      cout << line << '\n';
+    }
+    in.close();
+  }
   return 0;
 }

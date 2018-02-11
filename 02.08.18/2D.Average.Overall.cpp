@@ -1,7 +1,7 @@
-// This program
+// This program finds/Calculates the average test score of all students’ test scores.
 //Names: Joel Turbi
 //Course: CS246
-//Assignment: Exercise 1
+//Assignment: 2-D average Overall 
 //Due by: 02/01/2018
 
 #include <iostream>
@@ -28,7 +28,7 @@ int main()
 			x = grades[row][col];	// stores the value of grades at each iteration
 			sum += x;	// adds the sum of 3 test grades
 		}
-		cal = sum / 3; // Calculates the average of each student by the # of tests 
+		cal = sum / 3; // Calculates the average of each student by the # of tests
 
 		cout << "The average for student " << row+1 << " is " << cal << endl;
 	}

@@ -5,38 +5,34 @@
 //Due by: 02/11/2018
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 void Bitcoin()
 {
-  double total, diff;
-  int temp = 0;
-  double percent;
-  double bitPrice[6][6] = {4780,4318,6253,10357,13672,9641};
-
+  double matrix[2][6] = {4780,4318,6253,10357,13672,9641};
+  double bitcoin[2][6];
   for(int row = 0; row < 2; row++)
   {
-
-
     for(int col = 0; col < 6; col++)
     {
-      total = (bitPrice[row+1][col]+bitPrice[row+2][col]);
-      diff = ((bitPrice[row+1][col])-(bitPrice[row+2][col]));
-      percent = (diff/total) * 100;
-      temp += percent;
-      bitPrice[row][temp];
-      cout << total <<endl;
 
+     matrix[row+1][col+1] = (abs(matrix[row][col+1]-matrix[row][col]))/100;
+     bitcoin[row][col] = matrix[row][col];
+     cout << "Prices: \n";
+     cout << bitcoin[row][col] << "\n";
     }
+  //  cout << endl;
   }
 
- for(int i=0; i < 2; i++)
+  for(int i =0; i < 2; i++)
   {
-    for(int j=0; j < 6; j++)
+    for(int j = 0; j < 6; j++)
     {
-      cout << bitPrice[i][j] << endl;
+    //  cout << matrix[i][j] << "\n";
     }
   }
+
 }
 
 

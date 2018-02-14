@@ -10,29 +10,29 @@ using namespace std;
 
 void Bitcoin()
 {
-  double matrix[2][6] = {4780,4318,6253,10357,13672,9641};
-  double bitcoin[2][6];
-  for(int row = 0; row < 2; row++)
+  double matrix[2][6] = {{4780,4318,6253,10357,13672,9641},{}}; // 
+
+  cout << "Price & percentage incline and decline of Bitcoin in the last 6 months:";
+
+  for(int i = 0; i < 1; i++)
+  {
+    for(int j = 0; j < 5; j++)
+    {
+      double percentage = 0;
+      percentage = ((matrix[i][j+1])-(matrix[i][j]))/100;
+      matrix[i+1][j+1] += percentage;
+    }
+  }
+
+  // Display
+  for( int row = 0; row < 2; row++)
   {
     for(int col = 0; col < 6; col++)
     {
-
-     matrix[row+1][col+1] = (abs(matrix[row][col+1]-matrix[row][col]))/100;
-     bitcoin[row][col] = matrix[row][col];
-     cout << "Prices: \n";
-     cout << bitcoin[row][col] << "\n";
+      cout << "\n" << col+1 << " Month: " << matrix[row][col];
     }
-  //  cout << endl;
+    cout << "\n";
   }
-
-  for(int i =0; i < 2; i++)
-  {
-    for(int j = 0; j < 6; j++)
-    {
-    //  cout << matrix[i][j] << "\n";
-    }
-  }
-
 }
 
 

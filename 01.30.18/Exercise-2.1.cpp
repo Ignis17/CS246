@@ -9,16 +9,18 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <cassert> // Needed for assert member function.
 using namespace std;
 
-int main ()
+int integers()
 {
   int total=1;
+  int counter = 1;
   string line;
   ofstream out;
   out.open("numbers.txt");
 
-  while(total <= 20)
+  while(total <= 20 && counter <= 1000)
   {
     int number;
 
@@ -32,6 +34,7 @@ int main ()
       out << divisible << "\n";
       total++;
     }
+    counter++;
   }
   out.close();
   ifstream in;
@@ -46,5 +49,10 @@ int main ()
     }
     in.close();
   }
+}
+
+int main()
+{
+  integers();
   return 0;
 }

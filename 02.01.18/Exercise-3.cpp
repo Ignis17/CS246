@@ -1,7 +1,7 @@
 // This program calculate the product of two numbers without using the
 // * operator This problem requires repeated addition, e.g. 7*3 = 7+7+7,
 // So X*Y can be computed by adding X to itself Y times.
-// Names: Joel Turbi, Gregory Mendes
+// Names: Joel Turbi
 // Course: CS246
 // Assignment: Exercise 3
 // Due by: 02/01/2018

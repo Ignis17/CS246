@@ -27,6 +27,7 @@ int Digits()
     assert(); // Assert condition.
     input /= 10; // integer value gets divided by 10, in order to get the
                 // the number of digits.
+    cout << input << endl;
     counter++; // Reads the number of digits encounter by the input from user.
   }
 

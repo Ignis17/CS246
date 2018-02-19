@@ -17,7 +17,7 @@ int Multiplier()
   int z = 0;  // temp variable
 
   // Prompt user to enter values for X and Y.
-  cout << "please enter a multiplicand followed by multiplier: \n";
+  cout << "Please enter a multiplicand followed by multiplier: \n";
   cin >> x >> y;  // Gets inputs from user/keyboard.
 
   // Loop condition: performs calculations.

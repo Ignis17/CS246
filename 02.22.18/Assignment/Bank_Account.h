@@ -71,4 +71,4 @@ private:
   double num;
 };
 
-#endif // ACCOUNT_H
+#endif // BANK_ACCOUNT_H

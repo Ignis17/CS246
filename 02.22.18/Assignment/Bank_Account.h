@@ -1,23 +1,31 @@
+// This program simulates a bank account - ATM. It asks the user for
+// the account number as well as other features.
 // Name: Joel Turbi
-//
+// Course: CS246
+// Assignment: Bank Account
+// Due: 02-27-18
 #ifndef BANK_ACCOUNT_H
 #define BANK_ACCOUNT_H
-#include <string>
+#include <string> // Needed for strings.
 #include <iostream>
+#include <cassert> // Needed for the assert function.
 
 class Account
 {
 public:
-  Account()
+  Account() // Default constructor
   {
-    num = 0;
-    Balance = 0.0;
+    num = 0; // Initializes account number to 0(Zero).
+    Balance = 0.0; // Initializes account balance to 0(Zero).
   }
-  ~Account(){}
-  void Withdraw(double amount)
+  ~Account(){} // Destructor.
+  void Withdraw(double amount) // Member function to withdraw money from account.
   {
     if (amount > 0)
     {
+      // Pre-processor: 
+      // Post-processor:
+      assert(amount > 0);
       if (Balance < 0)
       {
         Balance -= amount*InterestRate;

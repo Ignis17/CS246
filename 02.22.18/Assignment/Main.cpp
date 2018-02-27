@@ -1,20 +1,27 @@
-// Creator: Joel Turbi
-// Due: 02-28-18
-
+// This program simulates a bank account - ATM. It asks the user for
+// the account number as well as other features.
+// Name: Joel Turbi
+// Course: CS246
+// Assignment: Bank Account
+// Due: 02-27-18
 #include <iostream>
+#include <string>
 #include "Bank_Account.h"
 using namespace std;
 
-void Menu()
+void Menu() // Menu to display choices to user.
 {
-  Account a;
-
+  Account a; // class object.
+  // Header
   cout << "\t**********-Welcome to ABC Bank-**********\n";
 
   int choice = 1;
 
   while (choice != 5 )
   {
+    // Pre-processor:
+    // Post-processor:
+    assert(choice !=5);
     cout << "\nEnter 5 to exit:\n";
     cout << "\n1. Account Number"
          << "\n2. Deposit money" << "\n3. Withdraw money"
@@ -23,7 +30,8 @@ void Menu()
 
     switch(choice)
     {
-      double ans;
+      int ans;
+
       case 1:  cout << "Enter Account #:\n";
                cin >> ans;
                a.SetAccountNumber(ans);
@@ -46,6 +54,6 @@ void Menu()
 
 int main()
 {
-  Menu();
+  Menu(); // function call.
   return 0;
 }

@@ -79,14 +79,14 @@ public:
   void Display() // Menu that displays account details.
   {
     std::cout<<"\t**********Display Account Details**********";
-    std::cout<<"\nAccount Number is:- " << GetAccountNumber();
-    std::cout<<"\nBalance is: " << "$" << GetBalance() << std::endl << std::endl;
+    std::cout<<"\nAccount Number: " << GetAccountNumber();
+    std::cout<<"\nAvailable Balance: " << "$" << GetBalance() << std::endl << std::endl;
   }
 private:
   double Balance; // Private declaration of balance variable.
   static const double InterestRate = 1.25; // static constant initilization of
                                            // Interest rate.
-  double num; // Private declaration for account number. 
+  double num; // Private declaration for account number.
 };
 
 #endif // BANK_ACCOUNT_H

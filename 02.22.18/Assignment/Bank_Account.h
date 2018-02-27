@@ -14,7 +14,7 @@ class Account
 public:
   Account() // Default constructor
   {
-    num = 000000000; // Initializes account number to 0(Zero).
+    num = 0; // Initializes account number to 0(Zero).
     Balance = 0.0; // Initializes account balance to 0(Zero).
   }
   ~Account(){} // Destructor.

@@ -6,7 +6,6 @@
 // Due: 02-27-18
 #ifndef BANK_ACCOUNT_H
 #define BANK_ACCOUNT_H
-#include <string> // Needed for strings.
 #include <iostream>
 #include <cassert> // Needed for the assert function.
 
@@ -15,7 +14,7 @@ class Account
 public:
   Account() // Default constructor
   {
-    num = 0; // Initializes account number to 0(Zero).
+    num = 000000000; // Initializes account number to 0(Zero).
     Balance = 0.0; // Initializes account balance to 0(Zero).
   }
   ~Account(){} // Destructor.
@@ -64,7 +63,7 @@ public:
       std::cout << "Incorrect money amount!" << std::endl;
     }
   }
-  double SetAccountNumber(double n) // Account number setter member function.
+  int SetAccountNumber(int n) // Account number setter member function.
   {
     num = n;
   }
@@ -72,7 +71,7 @@ public:
   {
     return Balance;
   }
-  double GetAccountNumber() // Returns account's number.
+  int GetAccountNumber() // Returns account's number.
   {
       return num;
   }
@@ -86,7 +85,7 @@ private:
   double Balance; // Private declaration of balance variable.
   static const double InterestRate = 1.25; // static constant initilization of
                                            // Interest rate.
-  double num; // Private declaration for account number.
+  int num; // Private declaration for account number.
 };
 
 #endif // BANK_ACCOUNT_H

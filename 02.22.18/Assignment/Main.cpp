@@ -5,6 +5,7 @@
 // Assignment: Bank Account
 // Due: 02-27-18
 #include <iostream>
+#include <string>
 #include "Bank_Account.h"
 using namespace std;
 
@@ -29,7 +30,8 @@ void Menu() // Menu to display choices to user.
 
     switch(choice)
     {
-      double ans;
+      int ans;
+
       case 1:  cout << "Enter Account #:\n";
                cin >> ans;
                a.SetAccountNumber(ans);

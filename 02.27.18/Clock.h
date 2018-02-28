@@ -1,7 +1,9 @@
 #ifndef CLOCK_H
 #define CLOCK_H
+//#define NDEBUG
 #include <sstream>
 #include <iomanip>
+#include <cassert>
 
 class Clock
 {
@@ -14,6 +16,9 @@ public:
   {
     if(value>=0&&value<=23)
     {
+      // Pre-procesor:
+      // Post-procesor: 
+      assert(value>=0 && value <=23);
       hour = value;
     }
   }

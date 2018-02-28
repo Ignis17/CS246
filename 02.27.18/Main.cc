@@ -3,17 +3,25 @@
 #include <ctime>
 using namespace std;
 
-int main()
+void Display()
 {
   time_t now = time(0);
   tm *ltm = localtime(&now);
-	//Using an anonymous object to display
-	//the time at midnight
-	Clock c;
 
-  c.SetHour(ltm->tm_hour);
-	c.SetMinutes(ltm->tm_min);
-	cout << "Hour: " << c.GetHour() << "\n" << "Minute: " << c.GetMinutes() << "\n";
-  cout << c.ToString() << "\n";
+  Clock c; // Clock object.
+  // Assigns current hour and minute respectively.
+  c.SetHour(ltm->tm_hour); // Sets the current hour value.
+	c.SetMinutes(ltm->tm_min); // Sets the current minute value.
+
+ // Displays Current time.
+  cout << "   The current time is: \n\n";
+  cout << "\t*********\n\t* ";
+  cout << c.ToString() << " *\n\t*********\n";
+}
+
+
+int main()
+{
+  Display(); // Function call.
   return 0;
 }

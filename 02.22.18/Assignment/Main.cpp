@@ -7,6 +7,8 @@
 #include <iostream>
 #include <string>
 #include "Bank_Account.h"
+#include <cassert>
+#define NDEBUG
 using namespace std;
 
 void Menu() // Menu to display choices to user.
@@ -19,22 +21,21 @@ void Menu() // Menu to display choices to user.
 
   while (choice != 5 )
   {
-    // Pre-processor:
-    // Post-processor:
+    // Pre-processor: Checks to see that the choice entered by the user is not equal to 5.
+    // Post-processor: If this checks out, it will execute the following statements, else it will display an error.
     assert(choice !=5);
     cout << "\nEnter 5 to exit:\n";
-    cout << "\n1. Account Number"
+    cout << "\n1. See account number"
          << "\n2. Deposit money" << "\n3. Withdraw money"
          << "\n4. See Account Status\n";
     cin>>choice;
 
     switch(choice)
     {
-      int ans;
+      float ans;
 
-      case 1:  cout << "Enter Account #:\n";
-               cin >> ans;
-               a.SetAccountNumber(ans);
+      case 1:
+               cout << "Account #: " << a.GetAccountNumber() << endl;
                break;
       case 2:  cout << "Enter amount to deposit:\n";
                cin >> ans;

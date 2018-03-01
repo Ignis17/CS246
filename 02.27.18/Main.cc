@@ -1,33 +1,27 @@
-// This program simulates a clock and displays the current time.
+// This program 
 // Name: Joel Turbi
 // Course: CS246
-// Assignment: Clock class
+// Assignment: 2A & 2B
 // Due: 03-01-18
-#include "Clock.h"
 #include <iostream>
-#include <ctime> // Needed for current time.
+#include <cstdlib>
+#include <cmath> // Needed for math library.
+#include "Point.h"
 using namespace std;
 
-void Display()
+// This function calculates the distance between two points.
+float Distance(const float& x,const float& y)
 {
-  // current date/time based on current system.
-  time_t now = time(0);
-  tm *ltm = localtime(&now);
-
-  Clock c; // Clock object.
-  // Assigns current hour and minute respectively.
-  c.SetHour(ltm->tm_hour); // Sets the current hour value.
-	c.SetMinutes(ltm->tm_min); // Sets the current minute value.
-
- // Displays Current time.
-  cout << "   The current time is: \n\n";
-  cout << "\t*********\n\t* ";
-  cout << c.ToString() << " *\n\t*********\n";
+	float result; // Stores the the distance between x & y.
+	result = sqrt((x*x)+(y*y)); // calculates the square root of the sum of x-squared & y-squared.
+	// Displays the distance between the two points.
+	cout << "The distance between " << x << " and " << y << " is " << (result) << ".\n";
 }
-
 
 int main()
 {
-  Display(); // Function call.
-  return 0;
+	Point p1(3,4);
+	Point p2(1,2);
+	Distance(p1.get_x(),p1.get_y());
+	return 0;
 }

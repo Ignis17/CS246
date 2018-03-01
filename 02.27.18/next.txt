@@ -1,0 +1,10 @@
+This assignment will be reviewed in class on Tuesday, February 27.
+
+Given 2 integer arrays, A and B with integers in the range of 1-100.
+Assume the size of A is 15 and the size of B is 20.
+Write functions for union and intersection that store the values in a third array, C.
+
+That is C = A union B and then C = A intersection B.
+
+This assignment will be used in the bag class discussion.
+Make sure that you include asserts as needed to test your code and also provide documentation on your test cases.

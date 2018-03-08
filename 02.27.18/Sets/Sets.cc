@@ -6,69 +6,78 @@
 // Assignment: Sets
 // Due by: 03/08/2018
 #include <cstdlib>
-#include <ctime>        // Used to generated a random number
-#include <algorithm>    // std::set_union, std::sort
+#include <algorithm>    // std::set_union,std::set_intersection, std::sort
 #include <vector>       // std::vector
 #include <iostream>
 #include <cassert>      // used for assert
-//#define  NDEBUG
+#define  NDEBUG
 using namespace std;
 
 // This function assigns generates random number from 1 to 100 to array.
 void FillArray(int arr[], int size)
 {
-  srand(time(NULL));
   for (int i=0;i < size;i++)
-{   //  Pre-condition: Chescks that size is equal to assigned value.
-    //  Post-condition: If size is correct it will execute the following statements,
-    //  otherwise it will display error message.
+  {
+    //  Pre-condition: Chescks that size is equal to assigned value.
+    //  Post-condition: If condition is true, it will execute the following
+    // statements. Otherwise it will display error message.
     assert(i < size);
-    bool check; //variable to check or number is already used
-    int n; // variable to store the number in
+    bool check; //  bool variable to check or number is already used
+    int n; // variable to store the number
     do
     {
-    n=rand()%100 + 1;
-    //check or number is already used:
-    check=true;
-    for (int j=0;j<i;j++)
-        if (n == arr[j]) //if number is already used
+      n = rand()%100 + 1;
+      //check or number is already used:
+      check = true;
+      for (int j=0;j<i;j++)
+      {
+        if (n == arr[j]) // if number is already used
         {
-            check=false; //set check to false
-            break; //no need to check the other elements of value[]
+          check=false; // set check to false
+          break; // no need to check the other elements of arr[]
         }
-    } while (!check); //loop until new, unique number is found
-    arr[i]=n; //store the generated number in the array
+      }
+    }while(!check); // loop until new, unique number is found
+    arr[i]=n; // store the generated number in the array
+  }
 }
-}
+
+// This function performs the Union between sets A and B.
 void Union(int arr1[],int arr2[])
 {
-  vector<int> v(20);
+  vector<int> v(20); // Initialized vector arrays
   vector<int>::iterator it;
-  sort(arr1,arr1+15);
-  sort(arr2,arr2+20);
-  it=set_union(arr1,arr1+15,arr2,arr2+20,v.begin());
-  v.resize(it-v.begin());
 
+  sort(arr1,arr1+15); // sort first array
+  sort(arr2,arr2+20); // sort second array
+
+  // calls function set_union and assigns it to vector array.
+  it = set_union(arr1,arr1+15,arr2,arr2+20,v.begin());
+
+  // Displays results of union set.
   cout << "The union has " << (v.size()) << " elements:\n";
-  for(it=v.begin(); it!=v.end(); ++it)
+  for(it=v.begin(); it != v.end(); ++it)
   {
     cout << ' ' << *it;
     cout << '\n';
   }
 }
 
+// This function performs the Intersection between sets A and B.
 void Intersection(int arr1[],int arr2[])
 {
-  vector<int> v(20);
+  vector<int> v(20); // Initialized vector arrays
   vector<int>::iterator it;
 
-  sort(arr1,arr1+15);
-  sort(arr2,arr2+20);
+  sort(arr1,arr1+15); // sort first array
+  sort(arr2,arr2+20); // sort second array
 
-  it=std::set_intersection (arr1,arr1+15,arr2,arr2+20,v.begin());
+  // calls function set_intersection and assigns it to vector array.
+  it = std::set_intersection (arr1,arr1+15,arr2,arr2+20,v.begin());
   v.resize(it-v.begin());
 
-  cout << "\n\nThe intersection has " << (v.size()) << " elements:\n";
+  // Displays  results of intersection set.
+  cout << "\nThe intersection has " << (v.size()) << " elements:\n";
   for (it=v.begin(); it!=v.end(); ++it)
   {
     cout << ' ' << *it;
@@ -78,11 +87,11 @@ void Intersection(int arr1[],int arr2[])
 
 int main()
 {
-  int A[15],B[20],C[20];
-  FillArray(A,15);
-  FillArray(B,20);
-  Union(A,B);
-  Intersection(A,B);
+  int A[15],B[20]; // Declaration and initialization of int arrays A, B and C.
+  FillArray(A,15); // Calls function to pass randomized numbers to array A.
+  FillArray(B,20);  // Calls function to pass randomized numbers to array B.
+  Union(A,B); // Calls function for Union between sets A and B.
+  Intersection(A,B); // Calls function for Intersection between sets A and B.
 
   return 0;
 }

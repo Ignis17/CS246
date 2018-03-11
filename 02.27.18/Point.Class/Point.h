@@ -30,5 +30,4 @@ private:
   double x;
   double y;
 };
-
 #endif

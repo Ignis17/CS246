@@ -73,7 +73,7 @@ void Intersection(int arr1[],int arr2[])
   sort(arr2,arr2+20); // sort second array
 
   // calls function set_intersection and assigns it to vector array.
-  it = std::set_intersection (arr1,arr1+15,arr2,arr2+20,v.begin());
+  it = set_intersection (arr1,arr1+15,arr2,arr2+20,v.begin());
   v.resize(it-v.begin());
 
   // Displays  results of intersection set.

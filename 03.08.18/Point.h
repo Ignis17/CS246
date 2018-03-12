@@ -1,5 +1,5 @@
 // This program modifies the previous Point.h and utilizes the Inheritance
-//(access specifiers).
+// (access specifiers).
 // Name: Joel Turbi
 // Course: CS246
 // Assignment: 2A & 2B
@@ -27,6 +27,7 @@ protected:
 private:
   double x,y; // Compact declaration
 };
+
 class Circle: protected Point
 {
 public:
@@ -35,6 +36,6 @@ public:
   // Gets the radius
   double GetRadius() const {return radius;}
 private:
-  double radius; 
+  double radius;
 };
 #endif

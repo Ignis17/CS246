@@ -20,9 +20,9 @@ public:
   double GetX() const {return x;}
   // Return the value of y
   double GetY() const {return y;}
-//protected: // In order to permit main program to use SetX() and SetY() functions
+protected: // In order to permit main program to use SetX() and SetY() functions
            // the protected specifier for setter functions can be commented out.
-           // making it public instead. 
+           // making it public instead.
   // Sets value for x.
   void SetX(double x){this->x = x;}
   // Sets value for y.
@@ -45,22 +45,28 @@ private:
 //                           - In this example having a public access specifier
 //                             would be more suited.
 //
-// Class Circle: private Point - In private mode the public and protected
+// Class Circle: private Point - In private the public and protected
 //                               members of base class become private members
 //                               of derived class.
 //
 // Class Circle: protected Point - Neither Point base class or its public member
 //                                 functions are accessible to Circle (child class).
 
-
+//
 class Circle: public Point
 {
 public:
+  // Overloaded constructor
   Circle(double radius, double x, double y):Point(x,y){this->radius = radius;}
   // Just set the radius for now.
   Circle(double radius = 1){this->radius =  radius;}
   // Gets the radius
   double GetRadius() const {return radius;}
+  void SetValues(double x, double y)
+  {
+    Point::SetX(x);
+    Point::SetY(y);
+  }
 
 private:
   double radius;

@@ -37,8 +37,7 @@ void Third()
 	//Circle c1(4,6.02,1.03);
 	Circle c1;
 	// Modified cordinates for Cirle Class
-	c1.SetX(2);
-	c1.SetY(2);
+	c1.SetValues(2,2);
 	/* What happens?
 		- An error message is displayed, stating that:
 			protected members from base class is declared as protected and it is

@@ -2,7 +2,7 @@
 //(access specifiers).
 // Name: Joel Turbi
 // Course: CS246
-// Assignment: 2A & 2B
+// Assignment: In class Inheritance Assignment
 // Due: 03-13-18
 #include "Point.h"
 
@@ -31,21 +31,24 @@ void Second()
 			SetX() being defined as protected and not being accessable by
 			Base function whose data is declared as private.*/
 }
-//
+
+// This functions illustrates the changing of access in member functions when
+// protected and inherited publicly.
 void Third()
 {
 	//Circle c1(4,6.02,1.03);
 	Circle c1;
 	// Modified cordinates for Cirle Class
 	c1.SetValues(2,2);
+
 	/* What happens?
 		- An error message is displayed, stating that:
 			protected members from base class is declared as protected and it is
 			protected within this context c1.SetX(2); Therefore cordinate values
 			cannot be set. */
+	// Display values from object
 	cout << "Radius: " << c1.GetRadius();
 	cout << " X: " << c1.GetX() << " Y: " << c1.GetY() << endl;
-
 
 
 

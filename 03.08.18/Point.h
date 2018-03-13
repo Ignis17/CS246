@@ -1,8 +1,8 @@
 // This program modifies the previous Point.h and utilizes the Inheritance
-// (access specifiers).
+//(access specifiers).
 // Name: Joel Turbi
 // Course: CS246
-// Assignment: 2A & 2B
+// Assignment: In class Inheritance Assignment
 // Due: 03-13-18
 
 #ifndef POINT_H
@@ -11,6 +11,7 @@
 #include <cstdlib>
 using namespace std;
 
+//
 class Point
 {
 public:
@@ -20,9 +21,7 @@ public:
   double GetX() const {return x;}
   // Return the value of y
   double GetY() const {return y;}
-protected: // In order to permit main program to use SetX() and SetY() functions
-           // the protected specifier for setter functions can be commented out.
-           // making it public instead.
+protected:
   // Sets value for x.
   void SetX(double x){this->x = x;}
   // Sets value for y.
@@ -62,10 +61,12 @@ public:
   Circle(double radius = 1){this->radius =  radius;}
   // Gets the radius
   double GetRadius() const {return radius;}
+  // This modification is needed to permit main program to use
+  // SetX() & SetY() functions.
   void SetValues(double x, double y)
   {
-    Point::SetX(x);
-    Point::SetY(y);
+    Point::SetX(x); // Function call.
+    Point::SetY(y); // Function call.
   }
 
 private:

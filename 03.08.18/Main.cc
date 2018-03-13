@@ -6,6 +6,7 @@
 // Due: 03-13-18
 #include "Point.h"
 
+
 // This function assigns and displays values for both X and Y.
 void First()
 {

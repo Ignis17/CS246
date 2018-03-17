@@ -1,3 +1,5 @@
+// Name: Joel Turbi
+// Due: 03/20/2018
 #ifndef BAG_H
 #define BAG_H
 #include <iostream>
@@ -6,10 +8,10 @@
 using namespace std;
 typedef  int bag_type;
 
-class Bag
-{
+class Bag{
 public:
   static const size_t CAPACITY = 20;
+
   //  Default constructor
   Bag()
   {
@@ -35,15 +37,17 @@ public:
     }
     return reply;
   }
-    bool InBag(bag_type value)  // Is a value in the bag?
+  // Is a value in the bag?
+  bool InBag(bag_type value)
   {
      bool reply=false;
      int  index;
-     for(index=0;index<count && !reply;index++)
+     for(index=0;index < count && !reply;index++)
         if(data[index] == value) reply=true;
      return reply;
   }
-  int HowMany(bag_type value) //How many of element;
+  // How many of element;
+  int HowMany(bag_type value)
   {
      int thismany=0;
      int index;
@@ -51,7 +55,8 @@ public:
         if(data[index]==value) thismany++;
      return thismany;
   }
-  bool Remove(bag_type value)  // Remove a value
+  // Remove a value
+  bool Remove(bag_type value)
   {
      bool reply=false;
      int  index;
@@ -59,18 +64,49 @@ public:
      reply=true;
      index=0;
      while(data[index] != value) index++;
-     for(;index<count;index++)
+     for(;index < count; index++)
         data[index]=data[index+1];
      count--;
   }
-  int Size()    // How many elements in bag?
+  // How many elements in bag?
+  int Size()
   {
      return count;
   }
+  bool IsExist(bag_type value)
+  {
+    for( int i = 0; i < count; i++)
+    {
+      if(data[i] == value)
+      {
+        return true;
+      }
+      else
+        return false;
+    }
+  }
+  bool IsFull()
+  {
+      return count == CAPACITY ? TRUE : FALSE;
+  }
 
-private:
-  size_t count;     // members in bag
-  bag_type  data[CAPACITY];  // data store up to 20 members
+protected:
+  // members in bag
+  size_t count;
+  // data stores up to 20 members
+  bag_type data[CAPACITY];
+};
+
+// Sets Class
+class Sets : public Bag
+{
+  void add(int element)
+  {
+    if(!IsExist(element) && !IsFull())
+    {
+      Insert(element);
+    }
+  }
 
 };
 #endif

@@ -1,5 +1,5 @@
 // Name: Joel Turbi
-// Due: 03/20/18
+// Due: 03/20/2018
 #include "Bag.h" // Includes bag class
 
 int main(int argc, char *argv[])

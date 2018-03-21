@@ -5,14 +5,18 @@
 // Assignment: Linked List
 // Due: 03/22/2018
 
-  - Compare two linked lists A and B
-  - Node is defined as:
-  struct Node
-    int data;
-    struct Node *next;
-
-  Lists(Node *headA, Node* headB)
-      while(headA!=NULL && headB!=NULL && headA->data==headB->data)headA=headA->next,headB=headB->next;
-      return headA==headB;
-
-  - Return 1 if they are identical and 0 if they are not.
+  1) Determine if a list is empty
+    if(headA == NULL)
+      // list is empty
+    if(headB == NULL)
+      // list is empty
+  2) Compare two linked lists A and B
+    - Node is defined as:
+      struct Node
+        int data;
+        struct Node *next;
+  3) Check if the two linked lists are identical
+      Lists(Node *headA, Node* headB)
+          while(headA!=NULL && headB!=NULL && headA->data==headB->data)headA=headA->next,headB=headB->next;
+          return headA==headB;
+      - Return 1 if they are identical and 0 if they are not.

@@ -24,10 +24,18 @@ public:
   int  HowMany(const bag_type&); // How many members in the bag.
   Bag operator +(const Bag&); // Bag join overloaded operator
   Bag& operator =(const Bag&); // Assignment overloaded operator
+  int GetData(const bag_type&);
+  int* GetBag();
 private:
   int count; // Members in bag.
   int bagsize; // Size of bag.
   bag_type *data; // Data store dynamically.
   void Resize(); // Increase the size of the bag.
+};
+
+class Set:public Bag{
+public:
+  void Union(bag_type*,bag_type*); // Union between two sets.
+  void Intersection(bag_type*, bag_type*); // Intersection between two sets.
 };
 #endif

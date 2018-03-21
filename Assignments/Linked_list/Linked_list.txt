@@ -1,0 +1,18 @@
+// This is an algorithm / pseudo code to determine if two linked lists
+// are identical, i.e. if the nodes have the same values.
+// Author: Joel Turbi
+// Course: CS246
+// Assignment: Linked List
+// Due: 03/22/2018
+
+  - Compare two linked lists A and B
+  - Node is defined as:
+  struct Node
+    int data;
+    struct Node *next;
+
+  Lists(Node *headA, Node* headB)
+      while(headA!=NULL && headB!=NULL && headA->data==headB->data)headA=headA->next,headB=headB->next;
+      return headA==headB;
+
+  - Return 1 if they are identical and 0 if they are not.

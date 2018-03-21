@@ -5,8 +5,12 @@
 // Course: CS246
 // Assignment: Bag Class
 // Due: 03/20/2018
- #include "Bag.h"
- #include <iostream>
+#include "Bag.h"
+#include <iostream>
+#include <algorithm>    // std::set_union,std::set_intersection, std::sort
+#include <vector>      // std::vector
+#include <cstdlib>
+using namespace std;
 
  Bag::Bag()    // Constructor
  {
@@ -140,6 +144,18 @@
     return count;
  }
 
+ int* Bag::GetBag()
+ {
+   int* reply;
+   reply = new int[bagsize];
+   int index=0;
+   for(;index < bagsize;index++){
+     reply[index] = data[index];
+     cout << index+1 << " "  <<*reply << " ";
+   }
+   return reply;
+ }
+
  void Bag::Resize()
  {
     //
@@ -160,4 +176,50 @@
 
     data=newdata;
     bagsize=newsize;
+ };
+
+ // This function performs the Union between sets A and B.
+ void Set::Union(int* a,int* b)
+ {
+   int size = Bag::Size();
+   a = new int[size];
+   b = new int[size];
+   vector<int> v(20); // Initialized vector arrays
+   vector<int>::iterator it;
+
+   sort(a,a+20); // sort first array
+   sort(b,b+20); // sort second array
+
+   // calls function set_union and assigns it to vector array.
+   it = set_union(a,a+20,b,b+20,v.begin());
+
+   // Displays results of union set.
+   cout << "The union has " << (v.size()) << " elements:\n";
+   for(it=v.begin(); it != v.end(); ++it)
+   {
+     cout << ' ' << *it;
+     cout << '\n';
+   }
  }
+
+ // This function performs the Intersection between sets A and B.
+ void Intersection(int arr1[],int arr2[])
+ {
+   vector<int> v(20); // Initialized vector arrays
+   vector<int>::iterator it;
+
+   sort(arr1,arr1+20); // sort first array
+   sort(arr2,arr2+20); // sort second array
+
+   // calls function set_intersection and assigns it to vector array.
+   it = set_intersection (arr1,arr1+20,arr2,arr2+20,v.begin());
+   v.resize(it-v.begin());
+
+   // Displays  results of intersection set.
+   cout << "\nThe intersection has " << (v.size()) << " elements:\n";
+   for (it=v.begin(); it!=v.end(); ++it)
+   {
+     cout << ' ' << *it;
+     cout << '\n';
+   }
+ };

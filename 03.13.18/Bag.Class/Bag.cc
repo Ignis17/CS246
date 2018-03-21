@@ -6,7 +6,7 @@
 // Assignment: Bag Class
 // Due: 03/20/2018
 
-#include "Bag.h" // Includes bag class as well as its  preprocessor directives.
+#include "Bag.h" // Includes bag class as well as its preprocessor directives.
 
 int main()
 {
@@ -23,8 +23,13 @@ int main()
       value = rand() % 9 + 1;
     }while(b.Insert(value));
 
+
     // Display information in bag to user.
     cout << b.Size()<< " elements in the bag." << endl;
+    // Display initial elements in the bag
+    cout << "The elements in the bag are: \n";
+    b.DisplayBag();
+    cout << endl;
     cout << b.HowMany(4) << " fours " << endl;
     b.Remove(4); // Removes 4 from the bag.
     cout << b.Size()<< " elements in the bag." << endl;
@@ -32,6 +37,7 @@ int main()
     cout << b.HowMany(5) << " fives " << endl;
     while(b.InBag(5)) b.Remove(5); // Removes every instance of element for
                                    // as long as it exists in the bag.
-    cout << b.HowMany(5) << " fives " << endl;
+    cout << b.HowMany(5) << " fives " << endl; // Displays how many fives are
+                                              // the bag.
     return 0;
 }

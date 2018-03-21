@@ -92,6 +92,13 @@ public:
   {
      return count;
   }
+  void DisplayBag(){
+    bag_type index = 0;
+    while(index < CAPACITY){
+      cout << data[index] << " ";
+      index++;
+    }
+  }
 
 private:
   // members in bag

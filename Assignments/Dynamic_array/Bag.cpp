@@ -12,21 +12,25 @@
 int main(){
   Bag b;
   bag_type value;
-  int* num;
-  num = new int[20];
   int limit=0;
 
-  cout << "First Bag" << endl;
   do {
-     value=rand()%9 +1;
+
+    value = rand() % 100 + 1;
      if(limit++ > 19) break;
   } while(b.Insert(value));
 
+  cout << "First Bag" << endl;
   cout << b.Size()<< " elements in the bag" << endl;
 
   cout << endl << "Second Bag " << endl;
-  Bag x=b;   // second bag a copy of first
+  Bag x=b;   // second bag a copy of first.
   cout << x.Size() << " elements in bag" << endl;
 
+  Set u;
+  cout << endl;
+  u.Union(b.GetData(), x.GetData());
+  Set i=u;
+  i.Intersection(b.GetData(), x.GetData());
   return 0;
 }

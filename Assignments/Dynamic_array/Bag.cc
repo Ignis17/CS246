@@ -10,7 +10,9 @@
 #include <algorithm>    // std::set_union,std::set_intersection, std::sort
 #include <vector>      // std::vector
 #include <cstdlib>
+#include <ctime>
 using namespace std;
+using std::vector;
 
  Bag::Bag()    // Constructor
  {
@@ -136,24 +138,23 @@ using namespace std;
        count--;
  }
 
+ int* Bag:: GetData()
+ {
+   int *dat;
+   dat = new int[Size()];
+   for(int i = 0;i < bagsize; i++)
+   {
+     dat[i] = data[i];
+   }
+   return dat;
+ }
+
  int Bag::Size() const
  {
     //
     // How many elements are there in the bag?
     //
     return count;
- }
-
- int* Bag::GetBag()
- {
-   int* reply;
-   reply = new int[bagsize];
-   int index=0;
-   for(;index < bagsize;index++){
-     reply[index] = data[index];
-     cout << index+1 << " "  <<*reply << " ";
-   }
-   return reply;
  }
 
  void Bag::Resize()
@@ -177,21 +178,24 @@ using namespace std;
     data=newdata;
     bagsize=newsize;
  };
-
- // This function performs the Union between sets A and B.
- void Set::Union(int* a,int* b)
- {
+ Set::Set(){
    int size = Bag::Size();
    a = new int[size];
    b = new int[size];
+ }
+ Set::~Set(){ if(a != NULL) delete [] a;  if(b != NULL) delete [] b;}
+
+ // This function performs the Union between sets A and B.
+ void Set::Union(bag_type* arr1,bag_type* arr2)
+ {
    vector<int> v(20); // Initialized vector arrays
    vector<int>::iterator it;
 
-   sort(a,a+20); // sort first array
-   sort(b,b+20); // sort second array
+   sort(arr1,arr1+20); // sort first array
+   sort(arr2,arr2+15); // sort second array
 
    // calls function set_union and assigns it to vector array.
-   it = set_union(a,a+20,b,b+20,v.begin());
+   it = set_union(arr1,arr1+20,arr2,arr2+15,v.begin());
 
    // Displays results of union set.
    cout << "The union has " << (v.size()) << " elements:\n";
@@ -203,16 +207,16 @@ using namespace std;
  }
 
  // This function performs the Intersection between sets A and B.
- void Intersection(int arr1[],int arr2[])
+ void Set::Intersection(bag_type* arr1,bag_type* arr2)
  {
    vector<int> v(20); // Initialized vector arrays
    vector<int>::iterator it;
 
    sort(arr1,arr1+20); // sort first array
-   sort(arr2,arr2+20); // sort second array
+   sort(arr2,arr2+15); // sort second array
 
    // calls function set_intersection and assigns it to vector array.
-   it = set_intersection (arr1,arr1+20,arr2,arr2+20,v.begin());
+   it = set_intersection (arr1,arr1+20,arr2,arr2+15,v.begin());
    v.resize(it-v.begin());
 
    // Displays  results of intersection set.

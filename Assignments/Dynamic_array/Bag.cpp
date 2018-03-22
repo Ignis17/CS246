@@ -10,27 +10,22 @@
 #include "Bag.cc"
 
 int main(){
-  Bag b;
+  Bag b; // first Bag object.
+  Bag x; // second Bag object.
+  Set u; // Sets object.
   bag_type value;
-  int limit=0;
+  int limit=1;
 
-  do {
-
-    value = rand() % 100 + 1;
-     if(limit++ > 19) break;
-  } while(b.Insert(value));
-
+  while(limit <= 20){b.Insert(limit);limit++;}
   cout << "First Bag" << endl;
   cout << b.Size()<< " elements in the bag" << endl;
 
   cout << endl << "Second Bag " << endl;
-  Bag x=b;   // second bag a copy of first.
+  x = b; // second bag a copy of first.
   cout << x.Size() << " elements in bag" << endl;
 
-  Set u;
   cout << endl;
-  u.Union(b.GetData(), x.GetData());
-  Set i=u;
-  i.Intersection(b.GetData(), x.GetData());
+  u.Union(x.GetData(), b.GetData());
+  u.Intersection(x.GetData(), b.GetData());
   return 0;
 }

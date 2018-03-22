@@ -12,7 +12,6 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-using std::vector;
 
  Bag::Bag()    // Constructor
  {
@@ -191,11 +190,11 @@ using std::vector;
    vector<int> v(20); // Initialized vector arrays
    vector<int>::iterator it;
 
-   sort(arr1,arr1+20); // sort first array
-   sort(arr2,arr2+15); // sort second array
+   sort(arr1,arr1+15); // sort first array
+   sort(arr2,arr2+20); // sort second array
 
    // calls function set_union and assigns it to vector array.
-   it = set_union(arr1,arr1+20,arr2,arr2+15,v.begin());
+   it = set_union(arr1,arr1+15,arr2,arr2+20,v.begin());
 
    // Displays results of union set.
    cout << "The union has " << (v.size()) << " elements:\n";
@@ -212,11 +211,11 @@ using std::vector;
    vector<int> v(20); // Initialized vector arrays
    vector<int>::iterator it;
 
-   sort(arr1,arr1+20); // sort first array
-   sort(arr2,arr2+15); // sort second array
+   sort(arr1,arr1+15); // sort first array
+   sort(arr2,arr2+20); // sort second array
 
    // calls function set_intersection and assigns it to vector array.
-   it = set_intersection (arr1,arr1+20,arr2,arr2+15,v.begin());
+   it = set_intersection (arr1,arr1+15,arr2,arr2+20,v.begin());
    v.resize(it-v.begin());
 
    // Displays  results of intersection set.

@@ -38,7 +38,6 @@ int main()
 		cout << endl;
 		delete [] a;
 	  return 0;
-
 }
 
 void swap(int &a, int &b)

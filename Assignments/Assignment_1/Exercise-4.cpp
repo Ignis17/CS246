@@ -24,7 +24,7 @@ int Digits()
     // Pre-condition: Checks to see that input is less than 10.
     // Post-condition: Once condition is met input is divided by 10
     // and counter gets incremented.
-    assert(); // Assert condition.
+    assert(input > 10); // Assert condition.
     input /= 10; // integer value gets divided by 10, in order to get the
                 // the number of digits.
     cout << input << endl;

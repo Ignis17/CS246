@@ -27,7 +27,7 @@ int Multiplier()
     // Post-condition: Once condition is met, it adds the value of X
     // to temp variable named Z.
     assert(y>0); // Assert condition
-    z +=x;  // adds value of X to Z.
+    z += x;  // adds value of X to Z.
     y--;  // Subtracts one from Y.
   }
   cout << "The result is: " << z << "\n"; // Displays end result to user.

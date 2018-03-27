@@ -1,0 +1,11 @@
+#!/bin/bash
+#Shell script to compile C++ files
+
+echo "Please enter the name of the file you'd like to compile:"
+
+read name
+fileName=${name%.*}.out
+
+g++ -o $fileName $name
+
+echo "Your file $fileName has been created."

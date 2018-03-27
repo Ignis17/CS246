@@ -1,10 +1,11 @@
-// This program is an implementation of the bag class. This is an intro to
+/// This program is an implementation of the bag class. This is an intro to
 // the container class. A container class is a class that can hold a collection
-// of items.
+// of items. This assignment modifies the Bag class with a derived set class
+// to replace static arrays with dynamic arrays.
 // Author: Joel Turbi
 // Course: CS246
-// Assignment: Bag Class
-// Due: 03/20/2018
+// Assignment: Dynamic Array & Set Class
+// Due: 03/22/2018
 
 #ifndef BAG_H
 #define BAG_H
@@ -24,7 +25,8 @@ public:
   int  HowMany(const bag_type&); // How many members in the bag.
   Bag operator +(const Bag&); // Bag join overloaded operator
   Bag& operator =(const Bag&); // Assignment overloaded operator
-  int* GetData();
+  int* GetData(); // retrieves dynamic data array.
+
 private:
   int count; // Members in bag.
   int bagsize; // Size of bag.
@@ -34,11 +36,12 @@ private:
 
 class Set:public Bag{
 public:
-
+  // Public member functions.
   Set();
   ~Set();
   void Union(bag_type*, bag_type*); // Union between two sets.
   void Intersection(bag_type*, bag_type*); // Intersection between two sets.
+  // Private members funtions.
 private:
   int* a;
   int* b;

@@ -19,7 +19,7 @@ public:
   value_type Data()const{return data_field;}
   // Two slightly different functions to retrieve current link:
   const Node* Link() const{return link_field;}
-  Node* Link(){return link_field;}
+  Node *Link(){return link_field;}
   size_t listLength(const Node* head_ptr)
   // Precondition: head_ptr is the head pointer of a linked list.
   // Postcondition: The value returned is the number of nodes in the linked list.

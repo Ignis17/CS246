@@ -18,7 +18,7 @@ int main(){
 
   //
   cout << q->Data() << " " << q->Link() << endl;
-  // 
+  //
   p = q;
   return 0;
 }

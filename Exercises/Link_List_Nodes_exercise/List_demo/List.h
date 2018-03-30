@@ -4,7 +4,12 @@
 
 #ifndef LIST_H
 #define LIST_H
-typedef double value_type;
+
+typedef int value_type;
+typedef size_t size_type;
+
+const size_type SIZE = 12; // Global const variable  named SIZE.
+
 class List
 {
 private:
@@ -23,5 +28,7 @@ public:
   void AddNode(value_type addData);
   void DeleteNode(value_type delData);
   void PrintList();
+  void Sort(value_type a[], size_type SIZE);
+  void FillArray(value_type arr[], size_type SIZE);
 };
 #endif

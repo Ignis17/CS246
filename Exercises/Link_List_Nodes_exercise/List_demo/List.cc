@@ -1,6 +1,6 @@
 #include <cstdlib> // Provides NULL
 #include <iostream>
-
+#include <cassert>
 #include "List.h" // Uses List header file
 
 using namespace std;
@@ -31,6 +31,7 @@ void List::AddNode(value_type addData)
   {
     head = n;
   }
+
 }
 void List::DeleteNode(value_type delData)
 {
@@ -65,5 +66,55 @@ void List::PrintList()
   {
       cout << curr->data << endl;
       curr = curr->next;
+  }
+}
+
+void List::Sort(value_type a[], size_type SIZE)
+{
+  bool swapped = false;
+
+  do
+  {
+    swapped = false; // reset before each scan
+
+    for (value_type j =1; j < SIZE; j++) // start at 1 and compare with previous
+    {
+        if (a[j-1] > a[j])  // move bigger values along, use "<" for descending
+        {
+          int temp;
+          temp = a[j];
+          a[j] = a[j-1];
+          a[j-1] = temp;
+          swapped = true;
+        }
+      }
+    }while(swapped);
+  }
+
+void List::FillArray(value_type arr[], size_type SIZE)
+{
+  for (value_type i=0;i < SIZE;i++)
+  {
+    //  Pre-condition: Chescks that SIZE is equal to assigned value.
+    //  Post-condition: If condition is true, it will execute the following
+    // statements. Otherwise it will display error message.
+    assert(i < SIZE);
+    bool check; //  bool variable to check or number is already used
+    int n; // variable to store the number
+    do
+    {
+      n = rand()%100 + 1;
+      //check or number is already used:
+      check = true;
+      for (value_type j = 0; j < i; j++)
+      {
+        if (n == arr[j]) // if number is already used
+        {
+          check=false; // set check to false
+          break; // no need to check the other elements of arr[]
+        }
+      }
+    }while(!check); // loop until new, unique number is found
+    arr[i] = n; // store the generated number in the array
   }
 }

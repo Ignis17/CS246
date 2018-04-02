@@ -1,3 +1,7 @@
+// Author: Joel Turbi
+// Course: CS246
+// Created: 03/29/2018
+
 #include <cstdlib> // Provides NULL
 #include <iostream>
 
@@ -8,11 +12,12 @@ using namespace std;
 
 int main()
 {
-  List test;
+  List test; // List object.
 
-  value_type A[SIZE];
-  test.FillArray(A,SIZE);
-  test.Sort(A,SIZE);
+  value_type A[SIZE]; // int array declared.
+  test.FillArray(A,SIZE); // Calls function to generate random numbers in array
+                          // between 1 and 100.
+  test.Sort(A,SIZE); // Sorts numbers in array in ascending order.
 
 
   for(value_type i = 0; i < SIZE; i++)

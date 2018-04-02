@@ -75,16 +75,16 @@ void List::Sort(value_type a[], size_type SIZE)
 
   do
   {
-    swapped = false; // reset before each scan
+    swapped = false; // reset before each scan 12 42 13 16
 
-    for (value_type j =1; j < SIZE; j++) // start at 1 and compare with previous
+    for (value_type i = 1; i < SIZE; i++) // start at 1 and compare with previous
     {
-        if (a[j-1] > a[j])  // move bigger values along, use "<" for descending
+        if (a[i-1] > a[i])  // move bigger values along, use "<" for descending
         {
           int temp;
-          temp = a[j];
-          a[j] = a[j-1];
-          a[j-1] = temp;
+          temp = a[i];
+          a[i] = a[i-1];
+          a[i-1] = temp;
           swapped = true;
         }
       }

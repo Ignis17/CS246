@@ -1,6 +1,15 @@
+// This programs provides a demonstration of Link list utilizing nodes. It first
+// generates 12 random numbers between 1 and 100, sorts them and finally inserts
+// it into the list.
+// Author: Joel Turbi
+// Course: CS246
+// Assignment: Node Class / List Class
+// Created: 03/29/2018
+
+
 #include <cstdlib> // Provides NULL
 #include <iostream>
-#include <cassert>
+#include <cassert> // Provides assert
 #include "List.h" // Uses List header file
 
 using namespace std;
@@ -75,46 +84,51 @@ void List::Sort(value_type a[], size_type SIZE)
 
   do
   {
-    swapped = false; // reset before each scan 12 42 13 16
+    swapped = false; // reset before each scan
 
     for (value_type i = 1; i < SIZE; i++) // start at 1 and compare with previous
     {
-        if (a[i-1] > a[i])  // move bigger values along, use "<" for descending
-        {
-          int temp;
-          temp = a[i];
-          a[i] = a[i-1];
-          a[i-1] = temp;
-          swapped = true;
-        }
-      }
-    }while(swapped);
-  }
+      assert(i < SIZE); // Checks that i does not exceed the value of SIZE.
 
-void List::FillArray(value_type arr[], size_type SIZE)
+      if (a[i-1] > a[i])  // move bigger values along, use "<" for descending
+      {
+        int temp; // Temporary int variable to hold value of index.
+        temp = a[i];
+        a[i] = a[i-1];
+        a[i-1] = temp;
+        swapped = true; // swapped is assigned a true value.
+      }
+    }
+  }while(swapped);
+}
+
+void List::NumberGenerator(value_type arr[], size_type SIZE)
 {
+
   for (value_type i=0;i < SIZE;i++)
   {
-    //  Pre-condition: Chescks that SIZE is equal to assigned value.
-    //  Post-condition: If condition is true, it will execute the following
-    // statements. Otherwise it will display error message.
-    assert(i < SIZE);
+    assert(i < SIZE); // Checks that i does not exceed the value of SIZE.
+
     bool check; //  bool variable to check or number is already used
     int n; // variable to store the number
+
     do
     {
-      n = rand()%100 + 1;
-      //check or number is already used:
+      // Generates random number between 1 and 100 and stores it in local
+      // variable.
+      n = rand()% 100 + 1;
+      // check or number is already used:
       check = true;
+
       for (value_type j = 0; j < i; j++)
       {
-        if (n == arr[j]) // if number is already used
+        if (n == arr[j]) // if number is already used.
         {
-          check=false; // set check to false
-          break; // no need to check the other elements of arr[]
+          check=false; // Set check to false.
+          break; // no need to check the other elements of arr[].
         }
       }
-    }while(!check); // loop until new, unique number is found
-    arr[i] = n; // store the generated number in the array
+    }while(!check); // loop until new, unique number is found.
+    arr[i] = n; // store the generated number in the array.
   }
-}
+};

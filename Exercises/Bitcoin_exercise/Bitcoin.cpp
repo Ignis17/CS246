@@ -6,13 +6,14 @@
 
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
 void Bitcoin()
 {
-  double matrix[2][6] = {{4780,4318,6253,10357,13672,9641},{}}; // 
+  double matrix[2][6] = {{4780,4318,6253,10357,13672,9641},{}};
 
-  cout << "Price & percentage incline and decline of Bitcoin in the last 6 months:";
+  cout << " Price & percentage incline and decline of Bitcoin in the last 6 months:\n";
 
   for(int i = 0; i < 1; i++)
   {
@@ -29,7 +30,7 @@ void Bitcoin()
   {
     for(int col = 0; col < 6; col++)
     {
-      cout << "\n" << col+1 << " Month: " << matrix[row][col];
+      cout << "\n\t" << col+1 << " Month: " << matrix[row][col];
     }
     cout << "\n";
   }

@@ -1,3 +1,8 @@
+// This program introduces the use of templates.
+// Name: Joel Turbi
+// Course: CS246
+// Created: 04/10/2018
+
 #include <iostream>
 
 template <class T>

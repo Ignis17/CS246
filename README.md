@@ -5,5 +5,5 @@
 ```
 # Exercises:
 ```
-(2D_arrays,Assert_examples,Binary_search,Birthday_gift,Bitcoin_exercise,Link_List_Nodes_exercise,Sort_list)
+(2D_arrays,Assert_examples,Binary_search,Birthday_gift,Bitcoin_exercise,Link_List_Nodes_exercise,Sort_list,Template)
 ```

@@ -69,7 +69,7 @@ int Integers()
     }
     in.close(); // ifstream file is closed.
   }
-} 
+}
 
 int main()
 {

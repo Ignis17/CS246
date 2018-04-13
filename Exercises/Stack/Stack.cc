@@ -6,11 +6,9 @@
 #include <iostream>
 #include <stack>
 
-using namespace std;
-
 int main()
 {
-  stack<string> words;
+  std::stack<std::string> words;
 
   words.push("Madam,");
   words.push(" I'm" );

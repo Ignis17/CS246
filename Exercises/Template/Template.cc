@@ -30,10 +30,9 @@ int max(T val1, T val2)
 
 int main()
 {
-  int array[10]={2,4,5,9,12,14,16,0,0,0};
-  int num = 4;
+  int array[7]={2,4,5,9,12,14,16};
 
   std::cout << "Position: " << fillArray(array,7,12) << std::endl;
-  std::cout << "Position: " << fillArray(array,7,1) << std::endl;
-  std::cout << "Max value: " << max(6,3) << std::endl;
+  std::cout << "Position: " << fillArray(array,7,16) << std::endl;
+  std::cout << "Max value: " << max(3,7) << std::endl;
 }

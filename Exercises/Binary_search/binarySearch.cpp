@@ -1,3 +1,7 @@
+// C++ implementation of Binary Search.
+// Name: Joel Turbi
+// Course: CS246
+// Created: 04/2
 #include <iostream>
 
 // A iterative binary search function. It returns
@@ -28,8 +32,8 @@ int main()
 {
   int arr[]={2,3,4,10,40};
   int n = sizeof(arr) / sizeof(arr[0]);
-  int x = 40;
-  int result = binarySearch(arr,0,n-1,x);
+  int x = 3;
+  int result = binarySearch(arr,0,n,x);
 
   if(result == -1)
       std::cout << "Element is not present in array.\n";

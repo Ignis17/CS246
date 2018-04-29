@@ -42,8 +42,8 @@ public:
   void AddNode(value_type addData)
   {
     nodePtr n = new node;
-    n->next = NULL;
     n->data = addData;
+    n->next = NULL;
 
     if(head != NULL)
     {

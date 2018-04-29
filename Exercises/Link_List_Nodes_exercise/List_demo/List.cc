@@ -29,9 +29,9 @@ int main()
   std::cout << "These are the numbers in this list:\n";
   test->PrintList(); // Calls print member function & displays values.
 
-  delete [] test, a; // deallocates pointer array.
-  a = nullptr; // Pointer is no longer referencing anything.
-  test = nullptr;
+  delete [] test, a; // Deallocates pointer array.
+  a = NULL; // Pointer is no longer referencing anything.
+  test = NULL; // Pointer is no longer referencing anything.
 
   return 0;
 }

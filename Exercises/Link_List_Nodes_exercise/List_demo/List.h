@@ -25,7 +25,7 @@ private:
   typedef struct node
   {
     value_type data;
-    node* next;
+    node *next;
   }* nodePtr;
 
   nodePtr head;
@@ -93,7 +93,6 @@ public:
     {
       for(int j=0; j < (SIZE-i-1);j++)
       {
-        cout << (SIZE-i-1) << endl;
         if(*(a+j) > *(a+(j+1)))
         {
           int temp = *(a+j);
@@ -113,23 +112,7 @@ public:
       curr = curr->next;
     }
   }
-  // void Sort(value_type *a)
-  // {
-  //   for(int *first = a, *swapped = a, *last = a + SIZE; !(last - first < 2 ); first = a, last = swapped)
-  //   {
-  //     swapped = a;
-  //     while ( ++first != last)
-  //     {
-  //       if (*(first - 1) > *first)
-  //       {
-  //         swapped = first;
-  //         int tmp = *first;
-  //         *first = *(first - 1);
-  //         *(first - 1) = tmp;
-  //       }
-  //     }
-  //   }
-  // }
+
   void NumberGenerator(value_type *&a)
   {
     delete [] a;

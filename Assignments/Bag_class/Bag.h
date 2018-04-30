@@ -43,7 +43,7 @@ public:
       count++;
     }
     else
-      reply=false;
+        reply=false;
     return reply;
   }
   void operator +=(const Bag& addend)

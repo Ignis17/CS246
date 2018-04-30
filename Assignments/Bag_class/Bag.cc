@@ -39,5 +39,6 @@ int main()
                                    // as long as it exists in the bag.
     cout << b.HowMany(5) << " fives " << endl; // Displays how many fives are
                                               // the bag.
+    cout << b.Size()<< " elements in the bag." << endl;
     return 0;
 }

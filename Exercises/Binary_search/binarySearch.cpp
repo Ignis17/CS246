@@ -1,7 +1,7 @@
 // C++ implementation of Binary Search.
 // Name: Joel Turbi
 // Course: CS246
-// Created: 04/2
+// Created: 04/27/2018
 #include <iostream>
 
 // A iterative binary search function. It returns
@@ -11,17 +11,17 @@ int binarySearch(int arr[], int left, int right, int x)
 {
   while(left <= right)
   {
-    int middle = left + (right - left)/2;
+    int middle = (left + (right - left)/2);
 
     // Check if c is present at the middle.
     if(arr[middle] == x)
         return middle;
     // If x is greater, ignore left half.
     else if(arr[middle] < x)
-        left = middle + 1;
+        left = (middle+1);
     // If x is smaller, ignore the right half.
     else
-        right = middle - 1;
+        right = (middle-1);
   }
   // If we reach here, then element was not present.
   return -1;
@@ -32,8 +32,8 @@ int main()
 {
   int arr[]={2,3,4,10,40};
   int n = sizeof(arr) / sizeof(arr[0]);
-  int x = 3;
-  int result = binarySearch(arr,0,n,x);
+  int x = 2;
+  int result = binarySearch(arr,0,(n-1),x);
 
   if(result == -1)
       std::cout << "Element is not present in array.\n";

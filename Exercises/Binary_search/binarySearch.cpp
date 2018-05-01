@@ -39,6 +39,5 @@ int main()
       std::cout << "Element is not present in array.\n";
   else
       std::cout << "Element is present at index " << result << std::endl;
-
   return 0;
 }

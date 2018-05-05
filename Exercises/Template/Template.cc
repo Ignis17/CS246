@@ -5,18 +5,22 @@
 
 #include <iostream>
 
+// fillArray function fills array and checks if value is in the array.
 template <class T>
 T fillArray(T arr[],T size,T value)
 {
   for(int i = 0; i < size;i++)
   {
+    // Checks to see if element in array is equivelant to value. If it is it
+    // returns the index of where that element is stored.
     if(arr[i] == value)
         return i;
   }
+  // If element is not in the array it returns -1.
   return -1;
 }
 
-// max Function returns the maximum value of the following two arguments.
+// max function returns the maximum value of the following two arguments.
 template <class T>
 T max(T val1, T val2)
 {

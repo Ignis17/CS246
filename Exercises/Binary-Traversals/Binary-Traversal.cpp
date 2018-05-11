@@ -14,7 +14,7 @@ void Preorder(struct Node *root) {
 	// if tree/sub-tree is empty, return and exit
 	if(root == NULL) return;
 
-	printf("%c ",root->data); // Print data
+	std::cout << root->data << " "; // Print data
 	Preorder(root->left);     // Visit left subtree
 	Preorder(root->right);    // Visit right subtree
 }
@@ -24,7 +24,7 @@ void Inorder(Node *root) {
 	if(root == NULL) return;
 
 	Inorder(root->left);       //Visit left subtree
-	printf("%c ",root->data);  //Print data
+	std::cout << root->data << " ";  //Print data
 	Inorder(root->right);      // Visit right subtree
 }
 
@@ -34,7 +34,7 @@ void Postorder(Node *root) {
 
 	Postorder(root->left);    // Visit left subtree
 	Postorder(root->right);   // Visit right subtree
-	printf("%c ",root->data); // Print data
+	std::cout << root->data << " "; // Print data
 }
 
 // Function to Insert Node in a Binary Search Tree
@@ -54,12 +54,12 @@ Node* Insert(Node *root,char data) {
 int main() {
 	/*Code To Test the logic
 	  Creating an example tree
-	                    M
+	        M
 			   / \
 			  B   Q
 			 / \   \
 			A   C   Z
-    */
+  */
 	Node* root = NULL;
 	root = Insert(root,'M'); root = Insert(root,'B');
 	root = Insert(root,'Q'); root = Insert(root,'Z');

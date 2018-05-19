@@ -7,7 +7,7 @@
 // Due by: 03/08/2018
 #include <cstdlib>
 #include <algorithm>    // std::set_union,std::set_intersection, std::sort
-#include <vector>  `     // std::vector
+#include <vector>     // std::vector
 #include <iostream>
 #include <cassert>      // used for assert
 #define  NDEBUG

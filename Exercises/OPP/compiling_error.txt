@@ -1,0 +1,19 @@
+In file included from C:/Program Files/mingw-w64/x86_64-7.3.0-posix-seh-rt_v5-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/cassert:44:0,
+                 from D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:5:
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h: In member function 'void ThinkingCap::slots(char*, char*)':
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:22:10: error: 'strlen' was not declared in this scope
+   assert(strlen(newGreen) < 50);
+          ^
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:22:10: note: suggested alternative: 'mbrlen'
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:24:3: error: 'strcpy' was not declared in this scope
+   strcpy(green,newGreen);
+   ^~~~~~
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:24:3: note: suggested alternative: 'strtol'
+   strcpy(green,newGreen);
+   ^~~~~~
+   strtol
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h: In function 'int main()':
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:39:26: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   h.slots("Hello","There");
+                          ^
+D:\Debian\CS246\Exercises\OPP\Thinking_Cap.h:39:26: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]

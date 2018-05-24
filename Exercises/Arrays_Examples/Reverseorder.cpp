@@ -8,7 +8,7 @@ int main()
 {
   int size=10; // Size of the array.
   int num[size]; // Array declaration.
-  int i; 
+  int i;
 
   // Assignment of array values.
   for(i=0;i<size; i++)

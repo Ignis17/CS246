@@ -55,9 +55,7 @@ public:
       curr->next = n;
     }
     else
-    {
-      head = n;
-    }
+        head = n;
   }
   void DeleteNode(value_type delData)
   {

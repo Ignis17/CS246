@@ -12,6 +12,6 @@ int mult(int a, int b)
 
 int main()
 {
-  std::cout << mult(2,0);
+  std::cout << mult(2,3);
   return 0;
 }

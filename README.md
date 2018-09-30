@@ -1,4 +1,4 @@
-# CS246 (Discrete Data Structures) - Medgar Evers College (Spring 2018)
+# CS246 (Data Structures) - Medgar Evers College (Spring 2018)
 ##  Course Description:
 *_This course introduces the different ways that data is organized 
 and stored in computer memory and the relevant procedures 
